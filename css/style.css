@@ -1,0 +1,343 @@
+@charset "UTF-8";
+/*@import url(http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,700);
+*/
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+    background-color: #fff;
+    font-family: 'Muli', sans-serif;
+}
+
+/* HEADER */
+
+#side {
+	display: inline-block;
+	width: 270px;
+	height: 100%;
+	margin: 0 auto;
+	float:left;
+	border-right: dotted 1px #DDD;
+	overflow: scroll;
+}
+
+#side #header {
+	padding-left: 5px;
+	padding-right: 5px;
+	font-size: 0.8em;
+	/*height: 80px;*/
+}
+
+#about {
+	font-size: 0.8em;
+}
+
+#about h5,h6,p,dl {
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+#main {
+	display: inline-block;
+	margin: 0 auto;
+}
+
+/* NETWORK */
+
+#network {
+	margin: 0 auto;
+	display: block;
+}
+
+#network .node {
+/*  stroke-width: 1.5px;
+  stroke-aligment: inner;*/
+}
+
+#network .node .circle {
+  stroke-width: 1.5px;
+  stroke-aligment: inner;
+  
+}
+
+#network .node .nodeTitle {
+  /*font-size: .5em;*/
+  text-anchor: "middle";
+  fill: red;
+  stroke-width: 0px;
+  pointer-events: none;
+}
+
+#network .node:hover {
+  stroke-width: 10px;
+  stroke: yellow;
+  /*stroke-aligment: inner;*/
+}
+
+#network .link {
+  stroke-opacity: .2;
+  fill: none;
+}
+
+#network #graph svg {
+  /*background-color: #000;*/
+}
+
+#network #graphInfo {
+	position: absolute;
+	font-size: 8px;
+}
+
+/****/
+
+#nodeinfo {
+/*	width: 100px;*/
+	/*position: absolute;
+	z-index: 5;*/
+	font-size: 0.8em;
+}
+
+.fixed-panel {
+/*  min-width: 100px;*/
+  /*min-width: 300px;*/
+  width: 400px;
+  overflow-y: scroll;
+}
+
+
+
+/* TIMELINE */
+
+#timeline {
+	display: block;
+	height: 120px;
+	border-top: dotted 1px #DDD;
+	margin: 0 auto;
+}
+
+#timeline .title {
+	/*background-color: #000;*/
+}
+
+#charts {
+  /*padding: 10px 0;*/
+}
+
+.chart {
+  /*display: inline-block;*/
+  /*height: 100px;*/
+  /*margin-bottom: 20px;*/
+}
+
+.reset {
+  padding-left: 1em;
+  font-size: smaller;
+  color: #ccc;
+}
+
+.background.bar {
+  fill: #ccc;
+}
+
+.foreground.bar {
+  fill: steelblue;
+  padding-left: 10px;
+}
+
+.filtered.bar {
+  	opacity: 0.3;
+}
+
+.axis path, .axis line {
+  fill: none;
+  stroke: #333;
+
+}
+
+.axis text {
+  /*font: 10px sans-serif;*/
+  font-size: .7em;
+}
+
+.brush rect.extent {
+  fill: steelblue;
+  fill-opacity: .125;
+}
+
+.brush .resize path {
+  fill: #eee;
+  stroke: #666;
+}
+
+#date-chart {
+  width: 170px;
+}
+
+/****/
+
+
+#tagList {
+	height: 200px;
+	overflow: scroll;
+}
+
+#filterSpace .well {
+	border-radius: 0 !important;
+  	-moz-border-radius: 0 !important;
+  	margin: 0px;
+  	background-color: #FDFDFD;
+}
+
+#filterSpace .activeFilter {
+	display: inline-block;
+	margin-right: 5px;
+	margin-bottom: 2px;
+	font-size: 1.15em;
+	padding: 2px;
+}
+
+#filterSpace .glyphicon {
+	font-size: 0.8em;
+	opacity: 0.5;
+	margin-left: 4px;
+}
+
+
+
+/****/
+
+.panel.panel-default {
+	margin-bottom: 0px;
+}
+
+#lists {
+	height: 600px;
+	overflow: scroll;
+}
+
+#tweet-list {
+/*	overflow: hidden;*/
+  /*min-height: 1024px;*/
+}
+
+#tweet-list .date {
+  font-size: .9em;
+  /*margin-bottom: .4em;*/
+}
+
+#tweet-list .day {
+  background-color: #3182bd;
+  width: 100%;
+  color: #FFF;
+  padding-left: 8px;
+}
+
+#tweet-list .tweet {
+  /*line-height: 1.5em;*/
+  border-bottom: 1px dotted #999;
+  padding: 8px;
+}
+
+#tweet-list .tweet:hover {
+  background-color: #e0ecf4;
+}
+
+#tweet-list .time {
+  color: #999;
+}
+
+#tweet-list .tweet div {
+  font-size: .9em;
+  /*display: inline-block;*/
+  /*width: 120px;*/
+}
+
+#tweet-list .tweet .retweet {
+  /*font-size: .9em;*/
+  font-size: .8em;
+  display: inline-block;
+  padding-right: 5px;
+  color: green;
+  /*width: 120px;*/
+}
+
+#tweet-list .tweet .source,
+#tweet-list .tweet .target {
+  font-weight: bold;
+  font-size: 1em;
+  display: inline-block;
+  padding-right: 5px;
+}
+
+#tweet-list div.text {
+  /*width: 600px;*/
+  padding-right: 10px;
+}
+
+/*loading*/
+
+#loading {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 20;
+  top: 0px;
+  left: 0px;
+  background-color: rgba(255, 255, 255, 0.6)
+}
+
+.spinner {
+  margin: auto;
+  margin-top: 25%;
+  width: 40px;
+  height: 40px;
+  position: relative;
+  text-align: center;
+  
+  -webkit-animation: rotate 2.0s infinite linear;
+  animation: rotate 2.0s infinite linear;
+}
+
+.dot1, .dot2 {
+  width: 60%;
+  height: 60%;
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  /*background-color: #756bb1;*/
+  background-color: #d95f0e;
+  border-radius: 100%;
+  opacity: .8;
+  
+  -webkit-animation: bounce 2.0s infinite ease-in-out;
+  animation: bounce 2.0s infinite ease-in-out;
+}
+
+.dot2 {
+  top: auto;
+  bottom: 0px;
+  -webkit-animation-delay: -1.0s;
+  animation-delay: -1.0s;
+}
+
+@-webkit-keyframes rotate { 100% { -webkit-transform: rotate(360deg) }}
+@keyframes rotate { 100% { transform: rotate(360deg); -webkit-transform: rotate(360deg) }}
+
+@-webkit-keyframes bounce {
+  0%, 100% { -webkit-transform: scale(0.0) }
+  50% { -webkit-transform: scale(1.0) }
+}
+
+@keyframes bounce {
+  0%, 100% { 
+    transform: scale(0.0);
+    -webkit-transform: scale(0.0);
+  } 50% { 
+    transform: scale(1.0);
+    -webkit-transform: scale(1.0);
+  }
+}

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8"/>
+	<title>Vancouver Transit Referendum: Tweetosphere Network Explorer</title>
+
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<!-- <link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css' /> -->
+	<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">-->
+	<link rel="stylesheet" href="js/bootstrap/css/bootstrap.min.css">
+
+	<!--<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>-->
+	<script src="js/jquery/jquery-1.11.3.min.js"></script>
+	<!--<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>-->
+	<script src="js/d3/d3.min.js" charset="utf-8"></script>
+	<!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>-->
+	<script src="js/bootstrap/js/bootstrap.min.js"></script>
+
+	<script src="js/dat/dat.gui.min.js" charset="utf-8"></script>
+	<script src="js/crossfilter/crossfilter.v1.min.js" charset="utf-8"></script>
+	<script src="js/moment/moment.js" charset="utf-8"></script>
+	<script src="js/main.js" charset="utf-8"></script>
+	<script src="js/transformation/transformData.js" charset="utf-8"></script>
+	<script src="js/force.js" charset="utf-8"></script>
+	<script src="js/timeline.js" charset="utf-8"></script>
+	<script src="js/jLouvain.js" charset="utf-8"></script>
+
+
+</head>
+
+<body>
+<div id="loading">
+	<div class="spinner">
+	    <div class="dot1"></div>
+	    <div class="dot2"></div>
+	</div>
+</div>
+
+<div id="side">
+
+	<div id="header">
+		<h4>Vancouver Transit Referendum
+		<small>Tweetosphere Network Explorer</small></h4>
+		<p><small>Designed by: <a href="http://www.luciano.fluxo.art.br" target="_blank">Luciano Frizzera</a></small></p>
+	</div>
+	<div id="about">
+		<div class="panel panel-default">
+  			<div class="panel-heading" data-toggle="collapse" data-target="#collapseAbout">
+				<h3 class="panel-title">About</h3>
+			</div>
+  		</div>
+  		<div class="collapse" id="collapseAbout">
+			<div id="aboutText">
+				<p>Between January and may 2015 Metro Vancouver was immersed in a debate about public investments in transit for the next 30 years.  The topic became controversial when Mayor’s Council proposed to increase the sales taxes to fund the project, and a referendum was called to decide about the adoption of this new revenue sources for Metro Vancouver transportation.</p>
+				<p>Nowadays, part of the public discussions happen online, especially  on social platforms, like Twitter. During 30 days, from Feb 11 to March 11, we capture this conversation on Twitter to investigate how digital social media platforms has been used to broadcast information of public interest, as well as promote civic engagement. This visualization maps and explorer public opinion and interactions among people using this platform about the Vancouver Transit Referendum.</p>
+			</div>
+			<div id="methodology-data">
+				<h5>Methodology</h5>
+				<h6>Data Collection</h6>
+				<p>The conversation about the proposed referendum was first anchored with the hashtag #cutcongestion, the mote of the official Mayors’ Council campaign. Drawn from a one-week exploratory analysis using the hashtag above, we thought that this hashtag would be very narrow to account for the interaction of other groups, especially from people that would disagree with the proposed transit plan. To have a broader view of the debate, we added the top most hashtags used with #cutcongestion and between February 11 to March 11 2015 we used Twitter Search API to collect and store almost 100,000 public tweets from about 21,000 profiles using the following hastags:</p>
+				<dl>
+					<dt><a href="https://twitter.com/search?q=%23cutcongestion&src=typd&vertical=default&lang=en" target="_blank">#cutcongestion</a></dt>
+					<dd>Mote of the official Mayors’ Council campaign.</dd>
+					<dt><a href="https://twitter.com/search?q=%23transitreferendum&src=typd&lang=en" target="_blank">#transitreferendum</a></dt>
+					<dd>Used as a more general and neutral anchor that quickly replaces the official #cutcongestion mote.</dd>
+					<dt><a href="https://twitter.com/search?q=%23yes4transit&src=typd&lang=en" target="_blank">#yes4transit</a></dt>
+					<dd>Mostly used by people in favour of the Mayor’s council plane.</dd>
+					<dt><a href="https://twitter.com/search?q=%23notranslinktax&src=typd&lang=en" target="_blank">#notranslinktax</a></dt>
+					<dd>Used to protest against the idea to give more money to the regional transit company.</dd>
+					<dt><a href="https://twitter.com/search?q=%23TransLink&src=typd&lang=en" target="_blank">#TransLink</a></dt>
+					<dd>The regional transit company.</dd>
+					<dt><a href="https://twitter.com/search?q=%23BCpoli&src=typd&lang=en" target="_blank">#BCpoli</a></dt>
+					<dd>Anchors the political debate in British Columbia, Canada.</dd>
+					<dt><a href="https://twitter.com/search?q=%23vanpoli&src=typd&lang=en" target="_blank">#vanpoli</a></dt>
+					<dd>Anchors the political discussions in Vancouver, Canada.</dd>
+				</dl>
+				<p>However, a few problems emerged in the analysis process. Tweets contains the hashtag #translink, can refer not only to the local transit service company, but also to other communication and transportation companies around the globe, particularly at UK, Australia, and USA. #vanpoli and #bcpoli are both locally recognized as aggregator terms for the political discussion in Vancouver and British Columbia (Canada), respectively. But the scope of these topics is very broad, covering all ranges of regional political topics (e.g., environment, finances, taxes, heath). </p>
+				<p>To solve the problem we used #vanpoli and #bcpoli to filter #translink. That is, from these three hashtags, we only keep tweets containing both #vanpoli and #translink, or both #bcpoli and #translink. After removing duplicates that overlaps across the selected hashtags, our dataset was reduced to 8,755 tweets from 2,710 profiles, using 437 different hashtags.</p>
+
+				<h6>Visualization</h6>
+				<p>To maps and explorer the network’s structure and user interactions, we examined a subset of the corpus, composed by tweets that connect people (<i>i.e.</i>, retweets). We used <a href="http://gephi.github.io/" target="_blank">Gephi</a> to produced a series of visualizations and apply metrics capable of providing dynamic configuration and operation of the network connected to the debate through the selected hashtags. We aimed to identify and understand the nature of the main actors (nodes) according to their position in the network. In this study we considered the following features:</p>
+				<dl>
+					<dt>Centrality</dt>
+					<dd>Defines the significance of an actor in the network. An actor is central when they directly or indirectly communicate to a large number of people.</dd>
+					<dt>Authority</dt>
+					<dd>Correspond to the number of links a node receives: the higher the number, the greater its authority.</dd>
+					<dt>HUB</dt>
+					<dd>Correspond to the number of links a node makes: the higher the number of links, the greater the chances of a node to become a hub</dd>
+					<dt>Betweenness Centrality</dt>
+					<dd>Defines the ability to intermediate the information flow between different parts of the network.</dd>
+				</dl>
+				<p>The next step was the development of this interactive visualization using <a href="http://d3js.org/" target="_blank">D3.js</a> and a few other web based components. Our goal is to encourage more people to explore the dynamic of social media networks and its impacts in the society, as well as ease the process of investigation of network graphs and social media interactions without using specialized tools.</p>
+			</div>
+			
+		</div>
+	</div>
+	
+	<div id="nodeinfo"></div>
+
+	<div id="hasgtagsList">
+		<div class="panel panel-default">
+  			<div class="panel-heading" data-toggle="collapse" data-target="#collapseFilter">
+				<h3 class="panel-title">Filter by Hashtag</h3>
+			</div>
+  		</div>
+		<div id="filterSpace"></div>
+		<div class="collapse" id="collapseFilter">
+		  <div id="tagList" class="list-group-group"></div>
+		</div>
+	</div>
+	
+	<div class="panel panel-default">
+  		<div class="panel-heading">
+  			<h3 class="panel-title">Tweets</h3>
+  		</div>
+  	</div>
+
+	<div id="lists">
+	 	<div id="tweet-list" class="list"></div>
+	</div>
+
+</div>
+
+<div id="main">
+
+	<div id="network">
+	<!-- 	<div id="nodeinfo"></div> -->
+		<div id="graphInfo"></div>
+		<div id="graph"></div>
+	</div>
+
+	<div id="timeline">
+		<div id="date-chart" class="chart">
+		</div>	
+	</div>
+</div>
+
+</body>
+</html>
