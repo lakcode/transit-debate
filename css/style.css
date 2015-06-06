@@ -42,6 +42,7 @@ body {
 }
 
 #main {
+  position: absolute;
 	display: inline-block;
 	margin: 0 auto;
 }
@@ -104,8 +105,8 @@ body {
 .fixed-panel {
 /*  min-width: 100px;*/
   /*min-width: 300px;*/
-  width: 400px;
-  overflow-y: scroll;
+ /* width: 400px;
+  overflow-y: scroll;*/
 }
 
 

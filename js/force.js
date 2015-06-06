@@ -8,7 +8,7 @@ var link;
 
 //size
 var svg;
-var networkContainerWidth = 1009;
+var networkContainerWidth = 600;
 var networkContainerHeight = 580;
 var graphInfo;
 
@@ -935,7 +935,7 @@ function buildDatGUI() {
 
 function resizeForce() {
   var width = window.innerWidth, height = window.innerHeight;
-  networkContainerWidth = width - $("#side").width() - 5;
+  networkContainerWidth = width - $("#side").width() - 10;
   networkContainerHeight = height - $("#timeline").height();
   if (svg) svg.attr("width", networkContainerWidth).attr("height", networkContainerHeight);
   if (force) force.size([networkContainerWidth, networkContainerHeight]).resume();
