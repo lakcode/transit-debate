@@ -12,19 +12,19 @@ Nowadays, part of the public discussions happen online, especially on social pla
 
 The conversation about the proposed referendum was first anchored with the hashtag #cutcongestion, the mote of the official Mayors’ Council campaign. Drawn from a one-week exploratory analysis using the hashtag above, we thought that this hashtag would be very narrow to account for the interaction of other groups, especially from people that would disagree with the proposed transit plan. To have a broader view of the debate, we added the top most hashtags used with #cutcongestion and between February 11 to March 11 2015 we used Twitter Search API to collect and store almost 100,000 public tweets from about 21,000 profiles using the following hastags:
 
-#cutcongestion
+/#cutcongestion
 Mote of the official Mayors’ Council campaign.
-#transitreferendum
+  #transitreferendum
 Used as a more general and neutral anchor that quickly replaces the official #cutcongestion mote.
-#yes4transit
+\#yes4transit
 Mostly used by people in favour of the Mayor’s council plane.
-#notranslinktax
+.#notranslinktax
 Used to protest against the idea to give more money to the regional transit company.
-#TransLink
+.#TransLink
 The regional transit company.
-#BCpoli
+.#BCpoli
 Anchors the political debate in British Columbia, Canada.
-#vanpoli
+ #vanpoli
 Anchors the political discussions in Vancouver, Canada.
 However, a few problems emerged in the analysis process. Tweets contains the hashtag #translink, can refer not only to the local transit service company, but also to other communication and transportation companies around the globe, particularly at UK, Australia, and USA. #vanpoli and #bcpoli are both locally recognized as aggregator terms for the political discussion in Vancouver and British Columbia (Canada), respectively. But the scope of these topics is very broad, covering all ranges of regional political topics (e.g., environment, finances, taxes, heath).
 
