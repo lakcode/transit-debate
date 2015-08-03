@@ -36,9 +36,9 @@ To maps and explorer the network’s structure and user interactions, we examine
 
 Centrality
 Defines the significance of an actor in the network. An actor is central when they directly or indirectly communicate to a large number of people.
-Authority
+Indegree (Authority)
 Correspond to the number of links a node receives: the higher the number, the greater its authority.
-HUB
+Outdegree (HUB)
 Correspond to the number of links a node makes: the higher the number of links, the greater the chances of a node to become a hub
 Betweenness Centrality
 Defines the ability to intermediate the information flow between different parts of the network.
