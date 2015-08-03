@@ -25,6 +25,7 @@ The regional transit company.
 ####BCpoli
 Anchors the political debate in British Columbia, Canada.
 ####vanpoli
+
 Anchors the political discussions in Vancouver, Canada.
 However, a few problems emerged in the analysis process. Tweets contains the hashtag #translink, can refer not only to the local transit service company, but also to other communication and transportation companies around the globe, particularly at UK, Australia, and USA. #vanpoli and #bcpoli are both locally recognized as aggregator terms for the political discussion in Vancouver and British Columbia (Canada), respectively. But the scope of these topics is very broad, covering all ranges of regional political topics (e.g., environment, finances, taxes, heath).
 
@@ -34,12 +35,13 @@ To solve the problem we used #vanpoli and #bcpoli to filter #translink. That is,
 
 To maps and explorer the network’s structure and user interactions, we examined a subset of the corpus, composed by tweets that connect people (i.e., retweets). We used Gephi to produced a series of visualizations and apply metrics capable of providing dynamic configuration and operation of the network connected to the debate through the selected hashtags. We aimed to identify and understand the nature of the main actors (nodes) according to their position in the network. In this study we considered the following features:
 
-Centrality
+####Centrality
 Defines the significance of an actor in the network. An actor is central when they directly or indirectly communicate to a large number of people.
-Authority
+####Indegree (Authority)
 Correspond to the number of links a node receives: the higher the number, the greater its authority.
-HUB
+####Outdegree (HUB)
 Correspond to the number of links a node makes: the higher the number of links, the greater the chances of a node to become a hub
-Betweenness Centrality
+####Betweenness Centrality
+
 Defines the ability to intermediate the information flow between different parts of the network.
 The next step was the development of this interactive visualization using [D3.js](http://d3js.org) and a few other web based components. Our goal is to encourage more people to explore the dynamic of social media networks and its impacts in the society, as well as ease the process of investigation of network graphs and social media interactions without using specialized tools.
